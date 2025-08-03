@@ -56,8 +56,8 @@ Requirements:
   - **Purpose:** Encodes a sequence of hashable items as a numpy array of integers, returning both the encoded array and a mapping dictionary.
   - **Usage:** `encoded, mapping = int_encode(['a', 'b', 'a'])`
 
-- `embed_seq(sequence, window=2)`
-  - **Purpose:** Returns overlapping n-grams (tuples) from the sequence using a sliding window.
+- `embed_seq(sequence, window=2, padding=False)`
+  - **Purpose:** Returns overlapping n-grams (tuples) from the sequence using a sliding window. It optionally adds padding to the left of the sequence.
   - **Usage:** `ngrams = embed_seq(['a', 'b', 'c', 'd'], window=2)`
 
 - `block_entropy(sequence, window=2, method="ML", base=2)`

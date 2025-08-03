@@ -22,7 +22,7 @@ def int_encode(items):
     encoded_array = np.array([unique_items[item] for item in items], dtype=np.int32)
     return encoded_array, unique_items
 
-def embed_seq(sequence, window=2):
+def embed_seq(sequence, window=2, padding=False):
     """
     Embed a sequence into overlapping subsequences (n-grams).
 
@@ -32,6 +32,8 @@ def embed_seq(sequence, window=2):
         Sequence of items.
     window : int, optional
         Length of each n-gram (default is 2).
+    padding : bool, optional
+        Whether to add padding to the left of the sequence
 
     Returns
     -------
@@ -39,6 +41,8 @@ def embed_seq(sequence, window=2):
         List of window-length n-grams.
     """
     sint, _ = int_encode(sequence)
+    if padding:
+    	sint = [-1]*(window-1) + sint
     N = len(sequence)
     output = [tuple(sint[i:i+window]) for i in range(N-window+1)]
     return output

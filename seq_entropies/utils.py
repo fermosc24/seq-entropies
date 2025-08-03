@@ -1,5 +1,6 @@
 import numpy as np
 from collections import Counter
+from entropy_estimators import Entropy 
 
 def int_encode(items):
     """

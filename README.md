@@ -87,27 +87,23 @@ print("Block entropy (window=2):", H2)
 C2 = se.block_cond_entropy(seq, window=2,method="MLE")
 print("Block conditional entropy (window=2):", C2)
 
-# Custom entropy estimator example
-def custom_entropy(counts, method="CWJ", base=2):
-    import numpy as np
-    probs = np.array(counts) / np.sum(counts)
-    return -np.sum(probs * np.log2(probs))  # log2
 
-print("Block entropy with custom estimator:",
-      se.block_entropy(seq, window=2, Entropy=custom_entropy))
+print("Block entropy with CWJ estimator:",
+      se.block_entropy(seq, window=2, method=CWJ))
 ```
 ---
 
 ## References
 
-1. J. M. Amigó, J. Szczepański, E. Wajnryb, and M. V. Sánchez‑Vives. *Estimating the Entropy Rate of Spike Trains via Lempel‑Ziv Complexity*. Neural Computation, **16**(4): 717–736, 2004. [https://doi.org/10.1162/089976604322860677](https://doi.org/10.1162/089976604322860677)
+- J. M. Amigó, J. Szczepański, E. Wajnryb, and M. V. Sánchez‑Vives. *Estimating the Entropy Rate of Spike Trains via Lempel‑Ziv Complexity*. Neural Computation, **16**(4): 717–736, 2004. [https://doi.org/10.1162/089976604322860677](https://doi.org/10.1162/089976604322860677)
 
+- T. M. Cover & J. A. Thomas. *Elements of Information Theory*, 2nd Edition. Wiley‑Interscience, 2006. [https://doi.org/10.1002/0471200611](https://doi.org/10.1002/0471200611)
 
-2. A. Lempel & J. Ziv. *On the Complexity of Finite Sequences*. IEEE Transactions on Information Theory, **22**(1): 75–81, 1976. [https://doi.org/10.1109/TIT.1976.1055501](https://doi.org/10.1109/TIT.1976.1055501)
+- A. Lempel & J. Ziv. *On the Complexity of Finite Sequences*. IEEE Transactions on Information Theory, **22**(1): 75–81, 1976. [https://doi.org/10.1109/TIT.1976.1055501](https://doi.org/10.1109/TIT.1976.1055501)
 
-3. A. Lesne, J.-L. Blanc, and L. Pezard. *Entropy Estimation of Very Short Symbolic Sequences*. Physical Review E, **79**(4 Pt 2): 046208, April 2009. [https://doi.org/10.1103/PhysRevE.79.046208](https://doi.org/10.1103/PhysRevE.79.046208)
+- A. Lesne, J.-L. Blanc, and L. Pezard. *Entropy Estimation of Very Short Symbolic Sequences*. Physical Review E, **79**(4 Pt 2): 046208, April 2009. [https://doi.org/10.1103/PhysRevE.79.046208](https://doi.org/10.1103/PhysRevE.79.046208)
 
-4. J. Ziv & A. Lempel. *A Universal Algorithm for Sequential Data Compression*. IEEE Transactions on Information Theory, **23**(3): 337–343, 1977. [https://doi.org/10.1109/TIT.1977.1055714](https://doi.org/10.1109/TIT.1977.1055714)
+- J. Ziv & A. Lempel. *A Universal Algorithm for Sequential Data Compression*. IEEE Transactions on Information Theory, **23**(3): 337–343, 1977. [https://doi.org/10.1109/TIT.1977.1055714](https://doi.org/10.1109/TIT.1977.1055714)
 
 
 ---

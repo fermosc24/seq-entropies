@@ -42,7 +42,7 @@ def embed_seq(sequence, window=2, padding=False):
     """
     sint, _ = int_encode(sequence)
     if padding:
-    	sint =np.array( [-1]*window + list(sint))
+    	sint =np.array( [-1]*(window-1) + list(sint))
     N = len(sequence)
     output = [tuple(sint[i:i+window]) for i in range(N-window+1)]
     return output

@@ -113,7 +113,7 @@ print("Block conditional entropy (window=2):", C2)
 
 
 print("Block entropy with CWJ estimator:",
-      se.block_entropy(seq, window=2, method=CWJ))
+      se.block_entropy(seq, window=2, method="CWJ"))
 ```
 ---
 

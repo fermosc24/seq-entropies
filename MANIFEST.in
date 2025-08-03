@@ -1,0 +1,4 @@
+include seq_entropies/lz.pyx
+include seq_entropies/utils.py
+include README.md
+

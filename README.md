@@ -56,6 +56,36 @@ Requirements:
 
 ---
 
+## Public API
+
+- `int_encode(items)`
+  - **Purpose:** Encodes a sequence of hashable items as a numpy array of integers, returning both the encoded array and a mapping dictionary.
+  - **Usage:** `encoded, mapping = int_encode(['a', 'b', 'a'])`
+
+- `embed_seq(sequence, window=2)`
+  - **Purpose:** Returns overlapping n-grams (tuples) from the sequence using a sliding window.
+  - **Usage:** `ngrams = embed_seq(['a', 'b', 'c', 'd'], window=2)`
+
+- `block_entropy(sequence, window=2, method="ML", base=2)`
+  - **Purpose:** Estimates the block entropy of the sequence for a given block size (window).
+  - **Usage:** `H = block_entropy(['a', 'b', 'a'], window=2)`
+
+- `block_cond_entropy(sequence, window=2, method="ML", base=2)`
+  - **Purpose:** Computes the conditional entropy: H(window) - H(window-1) for the sequence.
+  - **Usage:** `C = block_cond_entropy(['a', 'b', 'a'], window=2)`
+
+- `LZ76(sequence, base=2)`
+  - **Purpose:** Computes the LZ76 factorization and complexity of the sequence using a fast Cython implementation.
+  - **Returns:** Tuple of indices and complexity values.
+  - **Usage:** `N, L = LZ76(['a', 'b', 'a', 'b'])`
+
+- `ZL77(sequence, base=2)`
+  - **Purpose:** Computes the LZ77 factorization and complexity of the sequence using a fast Cython implementation.
+  - **Returns:** Tuple of indices and complexity values.
+  - **Usage:** `N, L = ZL77(['a', 'b', 'a', 'b'])`
+
+---
+
 ## Usage
 
 ```python

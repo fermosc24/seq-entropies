@@ -40,7 +40,6 @@ Clone the repository (or copy the files), then run:
 ```bash
 git clone https://github.com/fermosc24/seq-entropies.git
 cd seq-entropies
-
 pip install .
 ```
 or, for development/editable installs:
